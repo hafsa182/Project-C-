@@ -1,1 +1,51 @@
-ttyuu
+            ViewBooks  Function
+
+ Functionality:
+
+Shows a list of all the books stored in the system.
+
+If no books are available, displays a message saying the library is empty.
+
+Shows the book's index, title, author, and availability status.
+
+
+       Key Features:
+
+Checks for empty library: Prevents errors when no data is available.
+
+Formatted output: Clean and readable book list.
+
+Index display: Helps users choose a book by number when issuing.
+
+Availability shown with ternary operator:
+For example: isIssued ? "Issued" : "Available"
+
+No sorting: Books are shown in the order they were added.
+
+
+
+
+void viewBooks() {
+
+    if (bookCount == 0) {
+
+        cout << "No books available.\n";
+
+        return;
+
+    }
+
+    for (int i = 0; i < bookCount; i++) {
+
+        cout << "Index: " << i
+
+             << ", Title: " << books[i].title
+
+             << ", Author: " << books[i].author;
+
+        cout << (books[i].isIssued ? " (Issued)" : " (Available)") << endl;
+
+    }
+
+}
+
